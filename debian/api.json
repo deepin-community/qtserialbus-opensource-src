@@ -1,0 +1,2 @@
+{"Filepath":"include/QtSerialBus/qserialbusglobal.h","Functions":null,"Records":[{"Name":"macro","Fields":["DEPRECATED_HEADER_QtSerialBus_qserialbusglobal_h"]}]}
+{"Filepath":"include/QtSerialBus/qtserialbusversion.h","Functions":null,"Records":[{"Name":"macro","Fields":["QTSERIALBUS_VERSION","QTSERIALBUS_VERSION_STR","QT_QTSERIALBUS_VERSION_H"]}]}

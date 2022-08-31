@@ -1,0 +1,9 @@
+Document: qtserialbus5-doc-html
+Title: Qt 5 Serial Bus module
+Author: The Qt Company Ltd
+Abstract: This is the HTML documentation for Qt 5 Serial Bus
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/qtserialbus5-doc-html/html/qtserialbus/qtserialbus-index.html
+Files: /usr/share/doc/qtserialbus5-doc-html/html/qtserialbus/*.html

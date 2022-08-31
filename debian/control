@@ -1,0 +1,108 @@
+Source: qtserialbus-opensource-src
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Uploaders: Deepin Packages Builder <packages@deepin.org>
+Section: libs
+Priority: optional
+Build-Depends: debhelper-compat (= 12),
+               libqt5serialport5-dev (>= 5.15.1~),
+               linux-libc-dev [linux-any],
+               pkg-kde-tools,
+               qtbase5-dev (>= 5.15.1~),
+               qtbase5-private-dev (>= 5.15.1~)
+Build-Conflicts: cmake <!nocheck>
+Build-Depends-Indep: qttools5-dev-tools (>= 5.15.1~) <!nodoc>
+Standards-Version: 4.5.0
+Homepage: https://doc.qt.io/qt-5/qtserialbus-index.html
+
+Package: libqt5serialbus5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: libsocketcan2
+Description: Qt serialbus - serial bus access shared library
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains the shared library for Qt Serialbus.
+
+Package: libqt5serialbus5-bin
+Architecture: linux-any
+Section: utils
+Multi-Arch: foreign
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt Serialbus module serial bus access helper binaries
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains Serialbus helper binaries.
+
+Package: libqt5serialbus5-plugins
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libqt5serialbus5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Qt serialbus - serial bus access plugins
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains Qt Serialbus plugins.
+
+Package: libqt5serialbus5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libqt5serialbus5 (= ${binary:Version}),
+         libqt5serialbus5-plugins (= ${binary:Version}),
+         qtbase5-dev,
+         ${misc:Depends}
+Description: Qt serialbus serial bus access development
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains the header development files used for building Qt 5
+ applications using qtserialbus.
+
+Package: qtserialbus5-examples
+Architecture: linux-any
+Multi-Arch: same
+Section: x11
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Serialbus serial bus access examples
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains Qt 5 Serialbus examples.
+
+Package: qtserialbus5-doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt serialbus serial bus access QCH documentation
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains the documentation in QCH format, which can be
+ viewed using Qt Assistant from qttools5-dev-tools package.
+
+Package: qtserialbus5-doc-html
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt serialbus serial bus access HTML documentation
+ Qt serialbus module provides Qt module for general purpose
+ serial bus access. Support for CAN and potentially other
+ serial buses.
+ .
+ This package contains the documentation in HTML format.
