@@ -18,7 +18,7 @@ libQt5SerialBus.so.5 libqt5serialbus5 #MINVER#
  Qt_5.8@Qt_5.8 5.10.1
  Qt_5.9@Qt_5.9 5.10.1
  Qt_5@Qt_5 5.10.1
- Qt_5_PRIVATE_API@Qt_5_PRIVATE_API 5.10.1
+ (symver)Qt_5_PRIVATE_API 0
  _ZN12QModbusReply11qt_metacallEN11QMetaObject4CallEiPPv@Qt_5 5.10.1
  _ZN12QModbusReply11qt_metacastEPKc@Qt_5 5.10.1
  _ZN12QModbusReply11setFinishedEb@Qt_5 5.10.1
@@ -71,9 +71,7 @@ libQt5SerialBus.so.5 libqt5serialbus5 #MINVER#
  _ZN13QModbusClient20sendReadWriteRequestERK15QModbusDataUnitS2_i@Qt_5 5.10.1
  _ZN13QModbusClient22processPrivateResponseERK15QModbusResponseP15QModbusDataUnit@Qt_5 5.10.1
  _ZN13QModbusClientC1EP7QObject@Qt_5 5.10.1
- _ZN13QModbusClientC1ER20QModbusClientPrivateP7QObject@Qt_5_PRIVATE_API 5.10.1
  _ZN13QModbusClientC2EP7QObject@Qt_5 5.10.1
- _ZN13QModbusClientC2ER20QModbusClientPrivateP7QObject@Qt_5_PRIVATE_API 5.10.1
  _ZN13QModbusClientD0Ev@Qt_5 5.10.1
  _ZN13QModbusClientD1Ev@Qt_5 5.10.1
  _ZN13QModbusClientD2Ev@Qt_5 5.10.1
@@ -289,3 +287,4 @@ libQt5SerialBus.so.5 libqt5serialbus5 #MINVER#
  _ZrsR11QDataStreamR12QCanBusFrame@Qt_5 5.10.1
  _ZrsR11QDataStreamR14QModbusRequest@Qt_5 5.10.1
  _ZrsR11QDataStreamR15QModbusResponse@Qt_5 5.10.1
+ _ZrsR11QDataStreamRN10QModbusPdu12FunctionCodeE@Qt_5 5.15.5

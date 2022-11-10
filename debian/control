@@ -3,15 +3,18 @@ Maintainer: Deepin Developer <deepin-dev@deepin.org>
 Uploaders: Deepin Packages Builder <packages@deepin.org>
 Section: libs
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
-               libqt5serialport5-dev (>= 5.15.1~),
+Build-Depends: debhelper-compat (= 13),
+               dh-exec,
+               libqt5serialport5-dev (>= 5.15.7~),
                linux-libc-dev [linux-any],
                pkg-kde-tools,
-               qtbase5-dev (>= 5.15.1~),
-               qtbase5-private-dev (>= 5.15.1~)
+               qtbase5-dev (>= 5.15.7~),
+               qtbase5-private-dev (>= 5.15.7~)
 Build-Conflicts: cmake <!nocheck>
-Build-Depends-Indep: qttools5-dev-tools (>= 5.15.1~) <!nodoc>
-Standards-Version: 4.5.0
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>
+Standards-Version: 4.6.0
 Homepage: https://doc.qt.io/qt-5/qtserialbus-index.html
 
 Package: libqt5serialbus5
