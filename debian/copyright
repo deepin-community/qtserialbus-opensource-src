@@ -12,7 +12,7 @@ Files: debian/*
 Copyright: 2016 Simon Quigley <tsimonq2@ubuntu.com>
            2018 Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
            2018 Scarlett Clark <sgclark@kde.org>
-           2016-2020 Dmitry Shachnev <mitya57@debian.org>
+           2016-2022 Dmitry Shachnev <mitya57@debian.org>
 License: LGPL-3 or GPL-2+
 
 Files: examples/*

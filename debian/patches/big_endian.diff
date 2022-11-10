@@ -1,0 +1,54 @@
+Description: make pduFromStream work on big endian
+Origin: upstream, https://code.qt.io/cgit/qt/qtserialbus.git/patch/?id=e7ce9ac18b5a1ef3
+Last-Update: 2022-07-04
+
+--- a/src/serialbus/qmodbuspdu.cpp
++++ b/src/serialbus/qmodbuspdu.cpp
+@@ -128,11 +128,12 @@ static QDataStream &pduFromStream(QDataS
+     } raii = { pdu };
+ 
+     QModbusPdu::FunctionCode code = QModbusPdu::FunctionCode::Invalid;
+-    if (stream.readRawData(reinterpret_cast<char *>(&code), sizeof(quint8)) != sizeof(quint8))
++    stream >> code;
++    if (stream.status() == QDataStream::ReadPastEnd)
+         return stream;
+     pdu->setFunctionCode(code);
+ 
+-    if (code == QModbusPdu::Invalid || code == QModbusPdu::UndefinedFunctionCode) // shortcut
++    if (code == QModbusPdu::Invalid) // shortcut
+         return stream;
+ 
+     constexpr const int MaxPduDataSize = 252; // in bytes
+@@ -623,6 +624,22 @@ void QModbusRequest::registerDataSizeCal
+ }
+ 
+ /*!
++    \internal
++
++    Reads a FunctionCode from a \a stream.
++    In stream we serialize FunctionCode as one byte, so we use a temporary char
++    variable to make the code work on both little endian and big endian systems.
++    If reading from stream fails, code will retain original value.
++*/
++QDataStream &operator>>(QDataStream &stream, QModbusPdu::FunctionCode &code)
++{
++    char buffer;
++    if (stream.readRawData(&buffer, 1) == 1)
++        code = static_cast<QModbusPdu::FunctionCode>(buffer);
++    return stream;
++}
++
++/*!
+     \relates QModbusRequest
+ 
+     Reads a \a pdu from the \a stream and returns a reference to the stream.
+--- a/src/serialbus/qmodbuspdu.h
++++ b/src/serialbus/qmodbuspdu.h
+@@ -187,6 +187,7 @@ private:
+ };
+ Q_SERIALBUS_EXPORT QDebug operator<<(QDebug debug, const QModbusPdu &pdu);
+ Q_SERIALBUS_EXPORT QDataStream &operator<<(QDataStream &stream, const QModbusPdu &pdu);
++Q_SERIALBUS_EXPORT QDataStream &operator>>(QDataStream &stream, QModbusPdu::FunctionCode &code);
+ 
+ class QModbusRequest : public QModbusPdu
+ {
