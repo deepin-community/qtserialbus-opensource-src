@@ -1,3 +1,9 @@
+qtserialbus-opensource-src (5.15.8-1+dde) UNRELEASED; urgency=medium
+
+  * New upstream release (5.15.8).
+
+ -- Lu YaNing <luyaning@uniontech.com>  Wed, 01 Feb 2023 14:36:34 +0800
+
 qtserialbus-opensource-src (5.15.7-1+dde) unstable; urgency=medium
 
   * New upstream release (5.15.7).
