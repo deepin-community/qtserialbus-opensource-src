@@ -5,15 +5,15 @@ Section: libs
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-exec,
-               libqt5serialport5-dev (>= 5.15.7~),
+               libqt5serialport5-dev (>= 5.15.8~),
                linux-libc-dev [linux-any],
                pkg-kde-tools,
-               qtbase5-dev (>= 5.15.7~),
-               qtbase5-private-dev (>= 5.15.7~)
+               qtbase5-dev (>= 5.15.8~),
+               qtbase5-private-dev (>= 5.15.8~)
 Build-Conflicts: cmake <!nocheck>
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.8~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.8~) <!nodoc>
 Standards-Version: 4.6.0
 Homepage: https://doc.qt.io/qt-5/qtserialbus-index.html
 
